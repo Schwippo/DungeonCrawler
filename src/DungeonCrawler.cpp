@@ -1,4 +1,4 @@
-#include "DungeonCrawler.h"
+#include "../include/DungeonCrawler.h"
 
 DungeonCrawler::DungeonCrawler()
     : ui(new TerminalUI()), level(new Level()) {

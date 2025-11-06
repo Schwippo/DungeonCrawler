@@ -1,4 +1,4 @@
-#include "Wall.h"
+#include "../include/Wall.h"
 
 Wall::Wall(int row, int column)
     : Tile("#", row, column) {}

@@ -5,7 +5,7 @@
 #include "Floor.h"
 #include "Wall.h"
 #include "Portal.h"
-#include "Character.h"
+#include "../Character.h"
 
 // Forward declaration
 class Tile;

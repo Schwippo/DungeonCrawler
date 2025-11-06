@@ -1,4 +1,4 @@
-#include "Portal.h"
+#include "../include/Portal.h"
 
 Portal::Portal(int row, int column)
     : Tile("O", row, column), destination(nullptr) {}

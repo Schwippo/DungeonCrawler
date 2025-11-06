@@ -1,4 +1,4 @@
-#include "Character.h"
+#include "../include/Character.h"
 
 Character::Character(std::string texture)
     : texture(std::move(texture)), tile(nullptr) {}

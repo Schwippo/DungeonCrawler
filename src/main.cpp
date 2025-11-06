@@ -1,5 +1,5 @@
 #include <iostream>
-#include "DungeonCrawler.h"
+#include "../include/DungeonCrawler.h"
 
 int main() {
     DungeonCrawler game;

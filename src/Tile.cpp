@@ -1,4 +1,4 @@
-#include "Tile.h"
+#include "../include/Tile.h"
 
 Tile::Tile(std::string texture, int row, int column)
     : texture(std::move(texture)), character(nullptr), row(row), column(column) {}

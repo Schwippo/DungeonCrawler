@@ -1,4 +1,4 @@
-#include "TerminalUI.h"
+#include "../include/TerminalUI.h"
 #include <iostream>
 
 void TerminalUI::printLevel(Level* level) {

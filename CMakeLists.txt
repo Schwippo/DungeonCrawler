@@ -3,22 +3,22 @@ project(Dungeon_Crawler)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(Dungeon_Crawler main.cpp
-        Tile.cpp
-        Tile.h
-        Floor.cpp
+add_executable(Dungeon_Crawler src/main.cpp
+        src/Tile.cpp
+        include/Tile.h
+        src/Floor.cpp
         Floor.h
-        Wall.cpp
-        Wall.h
-        Portal.cpp
+        src/Wall.cpp
+        include/Wall.h
+        src/Portal.cpp
         Portal.h
-        Character.cpp
-        Character.h
-        Level.cpp
-        Level.h
-        DungeonCrawler.cpp
-        DungeonCrawler.h
-        AbstractUI.cpp
-        AbstractUI.h
-        TerminalUI.cpp
-        TerminalUI.h)
+        src/Character.cpp
+        include/Character.h
+        src/Level.cpp
+        include/Level.h
+        src/DungeonCrawler.cpp
+        include/DungeonCrawler.h
+        src/AbstractUI.cpp
+        include/AbstractUI.h
+        src/TerminalUI.cpp
+        include/TerminalUI.h)
