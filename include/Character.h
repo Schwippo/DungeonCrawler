@@ -22,7 +22,7 @@ public:
 
     // set UI für move-Delegation
     void setUI(AbstractUI* u);
-    inline Input getNextMove();
+    Input getNextMove();
 };
 
 

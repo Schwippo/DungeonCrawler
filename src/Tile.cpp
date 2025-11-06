@@ -35,7 +35,7 @@ bool Tile::moveTo(Tile *destTile, Character *who) {
     if (this->character == who) {
         this->character = nullptr;
     }
-    entered->character = who;
+    entered->setCharacter(who);
 
     // Character muss merken wo er jetzt steht
     who->setTile(entered);
