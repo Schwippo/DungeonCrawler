@@ -13,18 +13,23 @@ void TerminalUI::draw(Level* level) {
         }
         std::cout << "\n";
     }
+    std::cout.flush();
 }
 
 Input TerminalUI::move() {
+    Input in{};
+    int v = -1;
+
     std::cout << "\nBitte eingeben (1.9, 5=stehen, 0=exit): ";
-    int v;
+    std::cout.flush();
+
     if (!(std::cin >> v)) {
         // Ungültige Eingabe
         std::cin.clear();
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        return {}; // steht, keine Bewegung
+        return in; // steht, keine Bewegung
     }
-    Input in{};
+
     switch (v) {
         case 1: in.dr = +1; in.dc = -1; break;
         case 2: in.dr = +1; in.dc =  0; break;
