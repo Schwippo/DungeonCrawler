@@ -33,7 +33,7 @@ public:
     // Figur platzieren (ohne onEnter, nur Initialisierung)
     void placeCharacter(Character* c, int r, int col);
 
-    // access to one character in P1
+    // Zugriff auf erste Figur in P1
     Character* getPlayer() const;
     const std::vector<Character*>& getCharacters() const;
 };

@@ -49,65 +49,65 @@ cmake_ninja_workdir = /Users/lena/Library/Mobile$ Documents/com~apple~CloudDocs/
 
 build cmake_object_order_depends_target_Dungeon_Crawler: phony || .
 
-build CMakeFiles/Dungeon_Crawler.dir/main.cpp.o: CXX_COMPILER__Dungeon_Crawler_unscanned_Debug /Users/lena/Library/Mobile$ Documents/com~apple~CloudDocs/Uni/WS$ 25$:26/Programmieren$ 2/Praktikum/Dungeon-Crawler/main.cpp || cmake_object_order_depends_target_Dungeon_Crawler
-  DEP_FILE = CMakeFiles/Dungeon_Crawler.dir/main.cpp.o.d
+build CMakeFiles/Dungeon_Crawler.dir/src/main.cpp.o: CXX_COMPILER__Dungeon_Crawler_unscanned_Debug /Users/lena/Library/Mobile$ Documents/com~apple~CloudDocs/Uni/WS$ 25$:26/Programmieren$ 2/Praktikum/Dungeon-Crawler/src/main.cpp || cmake_object_order_depends_target_Dungeon_Crawler
+  DEP_FILE = CMakeFiles/Dungeon_Crawler.dir/src/main.cpp.o.d
   FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/Dungeon_Crawler.dir
-  OBJECT_FILE_DIR = CMakeFiles/Dungeon_Crawler.dir
+  OBJECT_FILE_DIR = CMakeFiles/Dungeon_Crawler.dir/src
 
-build CMakeFiles/Dungeon_Crawler.dir/Tile.cpp.o: CXX_COMPILER__Dungeon_Crawler_unscanned_Debug /Users/lena/Library/Mobile$ Documents/com~apple~CloudDocs/Uni/WS$ 25$:26/Programmieren$ 2/Praktikum/Dungeon-Crawler/Tile.cpp || cmake_object_order_depends_target_Dungeon_Crawler
-  DEP_FILE = CMakeFiles/Dungeon_Crawler.dir/Tile.cpp.o.d
+build CMakeFiles/Dungeon_Crawler.dir/src/Tile.cpp.o: CXX_COMPILER__Dungeon_Crawler_unscanned_Debug /Users/lena/Library/Mobile$ Documents/com~apple~CloudDocs/Uni/WS$ 25$:26/Programmieren$ 2/Praktikum/Dungeon-Crawler/src/Tile.cpp || cmake_object_order_depends_target_Dungeon_Crawler
+  DEP_FILE = CMakeFiles/Dungeon_Crawler.dir/src/Tile.cpp.o.d
   FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/Dungeon_Crawler.dir
-  OBJECT_FILE_DIR = CMakeFiles/Dungeon_Crawler.dir
+  OBJECT_FILE_DIR = CMakeFiles/Dungeon_Crawler.dir/src
 
-build CMakeFiles/Dungeon_Crawler.dir/Floor.cpp.o: CXX_COMPILER__Dungeon_Crawler_unscanned_Debug /Users/lena/Library/Mobile$ Documents/com~apple~CloudDocs/Uni/WS$ 25$:26/Programmieren$ 2/Praktikum/Dungeon-Crawler/Floor.cpp || cmake_object_order_depends_target_Dungeon_Crawler
-  DEP_FILE = CMakeFiles/Dungeon_Crawler.dir/Floor.cpp.o.d
+build CMakeFiles/Dungeon_Crawler.dir/src/Floor.cpp.o: CXX_COMPILER__Dungeon_Crawler_unscanned_Debug /Users/lena/Library/Mobile$ Documents/com~apple~CloudDocs/Uni/WS$ 25$:26/Programmieren$ 2/Praktikum/Dungeon-Crawler/src/Floor.cpp || cmake_object_order_depends_target_Dungeon_Crawler
+  DEP_FILE = CMakeFiles/Dungeon_Crawler.dir/src/Floor.cpp.o.d
   FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/Dungeon_Crawler.dir
-  OBJECT_FILE_DIR = CMakeFiles/Dungeon_Crawler.dir
+  OBJECT_FILE_DIR = CMakeFiles/Dungeon_Crawler.dir/src
 
-build CMakeFiles/Dungeon_Crawler.dir/Wall.cpp.o: CXX_COMPILER__Dungeon_Crawler_unscanned_Debug /Users/lena/Library/Mobile$ Documents/com~apple~CloudDocs/Uni/WS$ 25$:26/Programmieren$ 2/Praktikum/Dungeon-Crawler/Wall.cpp || cmake_object_order_depends_target_Dungeon_Crawler
-  DEP_FILE = CMakeFiles/Dungeon_Crawler.dir/Wall.cpp.o.d
+build CMakeFiles/Dungeon_Crawler.dir/src/Wall.cpp.o: CXX_COMPILER__Dungeon_Crawler_unscanned_Debug /Users/lena/Library/Mobile$ Documents/com~apple~CloudDocs/Uni/WS$ 25$:26/Programmieren$ 2/Praktikum/Dungeon-Crawler/src/Wall.cpp || cmake_object_order_depends_target_Dungeon_Crawler
+  DEP_FILE = CMakeFiles/Dungeon_Crawler.dir/src/Wall.cpp.o.d
   FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/Dungeon_Crawler.dir
-  OBJECT_FILE_DIR = CMakeFiles/Dungeon_Crawler.dir
+  OBJECT_FILE_DIR = CMakeFiles/Dungeon_Crawler.dir/src
 
-build CMakeFiles/Dungeon_Crawler.dir/Portal.cpp.o: CXX_COMPILER__Dungeon_Crawler_unscanned_Debug /Users/lena/Library/Mobile$ Documents/com~apple~CloudDocs/Uni/WS$ 25$:26/Programmieren$ 2/Praktikum/Dungeon-Crawler/Portal.cpp || cmake_object_order_depends_target_Dungeon_Crawler
-  DEP_FILE = CMakeFiles/Dungeon_Crawler.dir/Portal.cpp.o.d
+build CMakeFiles/Dungeon_Crawler.dir/src/Portal.cpp.o: CXX_COMPILER__Dungeon_Crawler_unscanned_Debug /Users/lena/Library/Mobile$ Documents/com~apple~CloudDocs/Uni/WS$ 25$:26/Programmieren$ 2/Praktikum/Dungeon-Crawler/src/Portal.cpp || cmake_object_order_depends_target_Dungeon_Crawler
+  DEP_FILE = CMakeFiles/Dungeon_Crawler.dir/src/Portal.cpp.o.d
   FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/Dungeon_Crawler.dir
-  OBJECT_FILE_DIR = CMakeFiles/Dungeon_Crawler.dir
+  OBJECT_FILE_DIR = CMakeFiles/Dungeon_Crawler.dir/src
 
-build CMakeFiles/Dungeon_Crawler.dir/Character.cpp.o: CXX_COMPILER__Dungeon_Crawler_unscanned_Debug /Users/lena/Library/Mobile$ Documents/com~apple~CloudDocs/Uni/WS$ 25$:26/Programmieren$ 2/Praktikum/Dungeon-Crawler/Character.cpp || cmake_object_order_depends_target_Dungeon_Crawler
-  DEP_FILE = CMakeFiles/Dungeon_Crawler.dir/Character.cpp.o.d
+build CMakeFiles/Dungeon_Crawler.dir/src/Character.cpp.o: CXX_COMPILER__Dungeon_Crawler_unscanned_Debug /Users/lena/Library/Mobile$ Documents/com~apple~CloudDocs/Uni/WS$ 25$:26/Programmieren$ 2/Praktikum/Dungeon-Crawler/src/Character.cpp || cmake_object_order_depends_target_Dungeon_Crawler
+  DEP_FILE = CMakeFiles/Dungeon_Crawler.dir/src/Character.cpp.o.d
   FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/Dungeon_Crawler.dir
-  OBJECT_FILE_DIR = CMakeFiles/Dungeon_Crawler.dir
+  OBJECT_FILE_DIR = CMakeFiles/Dungeon_Crawler.dir/src
 
-build CMakeFiles/Dungeon_Crawler.dir/Level.cpp.o: CXX_COMPILER__Dungeon_Crawler_unscanned_Debug /Users/lena/Library/Mobile$ Documents/com~apple~CloudDocs/Uni/WS$ 25$:26/Programmieren$ 2/Praktikum/Dungeon-Crawler/Level.cpp || cmake_object_order_depends_target_Dungeon_Crawler
-  DEP_FILE = CMakeFiles/Dungeon_Crawler.dir/Level.cpp.o.d
+build CMakeFiles/Dungeon_Crawler.dir/src/Level.cpp.o: CXX_COMPILER__Dungeon_Crawler_unscanned_Debug /Users/lena/Library/Mobile$ Documents/com~apple~CloudDocs/Uni/WS$ 25$:26/Programmieren$ 2/Praktikum/Dungeon-Crawler/src/Level.cpp || cmake_object_order_depends_target_Dungeon_Crawler
+  DEP_FILE = CMakeFiles/Dungeon_Crawler.dir/src/Level.cpp.o.d
   FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/Dungeon_Crawler.dir
-  OBJECT_FILE_DIR = CMakeFiles/Dungeon_Crawler.dir
+  OBJECT_FILE_DIR = CMakeFiles/Dungeon_Crawler.dir/src
 
-build CMakeFiles/Dungeon_Crawler.dir/DungeonCrawler.cpp.o: CXX_COMPILER__Dungeon_Crawler_unscanned_Debug /Users/lena/Library/Mobile$ Documents/com~apple~CloudDocs/Uni/WS$ 25$:26/Programmieren$ 2/Praktikum/Dungeon-Crawler/DungeonCrawler.cpp || cmake_object_order_depends_target_Dungeon_Crawler
-  DEP_FILE = CMakeFiles/Dungeon_Crawler.dir/DungeonCrawler.cpp.o.d
+build CMakeFiles/Dungeon_Crawler.dir/src/DungeonCrawler.cpp.o: CXX_COMPILER__Dungeon_Crawler_unscanned_Debug /Users/lena/Library/Mobile$ Documents/com~apple~CloudDocs/Uni/WS$ 25$:26/Programmieren$ 2/Praktikum/Dungeon-Crawler/src/DungeonCrawler.cpp || cmake_object_order_depends_target_Dungeon_Crawler
+  DEP_FILE = CMakeFiles/Dungeon_Crawler.dir/src/DungeonCrawler.cpp.o.d
   FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/Dungeon_Crawler.dir
-  OBJECT_FILE_DIR = CMakeFiles/Dungeon_Crawler.dir
+  OBJECT_FILE_DIR = CMakeFiles/Dungeon_Crawler.dir/src
 
-build CMakeFiles/Dungeon_Crawler.dir/AbstractUI.cpp.o: CXX_COMPILER__Dungeon_Crawler_unscanned_Debug /Users/lena/Library/Mobile$ Documents/com~apple~CloudDocs/Uni/WS$ 25$:26/Programmieren$ 2/Praktikum/Dungeon-Crawler/AbstractUI.cpp || cmake_object_order_depends_target_Dungeon_Crawler
-  DEP_FILE = CMakeFiles/Dungeon_Crawler.dir/AbstractUI.cpp.o.d
+build CMakeFiles/Dungeon_Crawler.dir/src/AbstractUI.cpp.o: CXX_COMPILER__Dungeon_Crawler_unscanned_Debug /Users/lena/Library/Mobile$ Documents/com~apple~CloudDocs/Uni/WS$ 25$:26/Programmieren$ 2/Praktikum/Dungeon-Crawler/src/AbstractUI.cpp || cmake_object_order_depends_target_Dungeon_Crawler
+  DEP_FILE = CMakeFiles/Dungeon_Crawler.dir/src/AbstractUI.cpp.o.d
   FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/Dungeon_Crawler.dir
-  OBJECT_FILE_DIR = CMakeFiles/Dungeon_Crawler.dir
+  OBJECT_FILE_DIR = CMakeFiles/Dungeon_Crawler.dir/src
 
-build CMakeFiles/Dungeon_Crawler.dir/TerminalUI.cpp.o: CXX_COMPILER__Dungeon_Crawler_unscanned_Debug /Users/lena/Library/Mobile$ Documents/com~apple~CloudDocs/Uni/WS$ 25$:26/Programmieren$ 2/Praktikum/Dungeon-Crawler/TerminalUI.cpp || cmake_object_order_depends_target_Dungeon_Crawler
-  DEP_FILE = CMakeFiles/Dungeon_Crawler.dir/TerminalUI.cpp.o.d
+build CMakeFiles/Dungeon_Crawler.dir/src/TerminalUI.cpp.o: CXX_COMPILER__Dungeon_Crawler_unscanned_Debug /Users/lena/Library/Mobile$ Documents/com~apple~CloudDocs/Uni/WS$ 25$:26/Programmieren$ 2/Praktikum/Dungeon-Crawler/src/TerminalUI.cpp || cmake_object_order_depends_target_Dungeon_Crawler
+  DEP_FILE = CMakeFiles/Dungeon_Crawler.dir/src/TerminalUI.cpp.o.d
   FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/Dungeon_Crawler.dir
-  OBJECT_FILE_DIR = CMakeFiles/Dungeon_Crawler.dir
+  OBJECT_FILE_DIR = CMakeFiles/Dungeon_Crawler.dir/src
 
 
 # =============================================================================
@@ -117,7 +117,7 @@ build CMakeFiles/Dungeon_Crawler.dir/TerminalUI.cpp.o: CXX_COMPILER__Dungeon_Cra
 #############################################
 # Link the executable Dungeon_Crawler
 
-build Dungeon_Crawler: CXX_EXECUTABLE_LINKER__Dungeon_Crawler_Debug CMakeFiles/Dungeon_Crawler.dir/main.cpp.o CMakeFiles/Dungeon_Crawler.dir/Tile.cpp.o CMakeFiles/Dungeon_Crawler.dir/Floor.cpp.o CMakeFiles/Dungeon_Crawler.dir/Wall.cpp.o CMakeFiles/Dungeon_Crawler.dir/Portal.cpp.o CMakeFiles/Dungeon_Crawler.dir/Character.cpp.o CMakeFiles/Dungeon_Crawler.dir/Level.cpp.o CMakeFiles/Dungeon_Crawler.dir/DungeonCrawler.cpp.o CMakeFiles/Dungeon_Crawler.dir/AbstractUI.cpp.o CMakeFiles/Dungeon_Crawler.dir/TerminalUI.cpp.o
+build Dungeon_Crawler: CXX_EXECUTABLE_LINKER__Dungeon_Crawler_Debug CMakeFiles/Dungeon_Crawler.dir/src/main.cpp.o CMakeFiles/Dungeon_Crawler.dir/src/Tile.cpp.o CMakeFiles/Dungeon_Crawler.dir/src/Floor.cpp.o CMakeFiles/Dungeon_Crawler.dir/src/Wall.cpp.o CMakeFiles/Dungeon_Crawler.dir/src/Portal.cpp.o CMakeFiles/Dungeon_Crawler.dir/src/Character.cpp.o CMakeFiles/Dungeon_Crawler.dir/src/Level.cpp.o CMakeFiles/Dungeon_Crawler.dir/src/DungeonCrawler.cpp.o CMakeFiles/Dungeon_Crawler.dir/src/AbstractUI.cpp.o CMakeFiles/Dungeon_Crawler.dir/src/TerminalUI.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk
   OBJECT_DIR = CMakeFiles/Dungeon_Crawler.dir
   POST_BUILD = :

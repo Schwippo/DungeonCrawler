@@ -1,7 +1,11 @@
 #include "../include/TerminalUI.h"
+#include "../include/Level.h"
+#include "../include/Tile.h"
 #include <iostream>
+#include <limits>
 
-void TerminalUI::printLevel(Level* level) {
+void TerminalUI::draw(Level* level) {
+    std::cout << "Aktuelles Level:\n\n";
     for (int r = 0; r < level->getHeight(); ++r) {
         for (int c = 0; c < level->getWidth(); ++c) {
             const Tile* t = level->getTile(r, c);
@@ -11,30 +15,33 @@ void TerminalUI::printLevel(Level* level) {
     }
 }
 
-int TerminalUI::readDirection() {
-    std::cout << "\nBewegung (Ziffernblock 1-9, 5=stehen, 0=Ende): ";
-    int direction = -1;
-
-    if (!(std::cin >> direction)) {
-        // input error -> stay in position
+Input TerminalUI::move() {
+    std::cout << "\nBitte eingeben (1.9, 5=stehen, 0=exit): ";
+    int v = -1;
+    if (!(std::cin >> v)) {
         std::cin.clear();
-        std::string dump;
-        std::getline(std::cin, dump);
-        return 5;
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        return {}; // steht
     }
-    return direction;
-}
+    Input in{};
+    if (v == 0) {
+        in.quit = true;
+        return in;
+    }
 
-void TerminalUI::draw(Level* level) {
-    printLevel(level);
-    int direction = readDirection();
-    if (direction == 0) {
-        // end programm
-        return;
+    switch (v) {
+        case 1: in.dr = +1; in.dc = -1; break;
+        case 2: in.dr = +1; in.dc =  0; break;
+        case 3: in.dr = +1; in.dc = +1; break;
+        case 4: in.dr =  0; in.dc = -1; break;
+        case 5: in.dr =  0; in.dc =  0; break;
+        case 6: in.dr =  0; in.dc = +1; break;
+        case 7: in.dr = -1; in.dc = -1; break;
+        case 8: in.dr = -1; in.dc =  0; break;
+        case 9: in.dr = -1; in.dc = +1; break;
+        default: /* ungültig -> stehen */ break;
     }
-    if (controller) {
-        controller->turn(direction);
-    }
+    return in;
 }
 
 

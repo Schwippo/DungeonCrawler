@@ -1,12 +1,16 @@
 #include "../include/DungeonCrawler.h"
+#include "../include/Level.h"
+#include "../include/TerminalUI.h"
+#include "../include/Character.h"
+#include "../include/Tile.h"
 
 DungeonCrawler::DungeonCrawler()
-    : ui(new TerminalUI()), level(new Level()) {
-    ui->setController(this);
-
-    // game start
+    : level(new Level()), ui(new TerminalUI()) {
+    // Character kennt seine UI (Delegation)
+    if (auto* p = level->getPlayer()) p->setUI(ui);
     ui->draw(level);
 }
+
 DungeonCrawler::~DungeonCrawler() {
     delete ui;
     delete level;
@@ -14,53 +18,27 @@ DungeonCrawler::~DungeonCrawler() {
 
 Level *DungeonCrawler::getLevel() const { return level; }
 
-void DungeonCrawler::directionToDelta(int movingDir, int& dr, int& dc) {
-    // numpad layout
-    // 7 8 9
-    // 4 5 6
-    // 1 2 3
-    dr = 0; dc = 0;
-    switch (movingDir) {
-        case 7: dr = -1; dc = -1; break;
-        case 8: dr = -1; dc =  0; break;
-        case 9: dr = -1; dc = +1; break;
-        case 4: dr =  0; dc = -1; break;
-        case 5: dr =  0; dc =  0; break;
-        case 6: dr =  0; dc = +1; break;
-        case 1: dr = +1; dc = -1; break;
-        case 2: dr = +1; dc =  0; break;
-        case 3: dr = +1; dc = +1; break;
-        default: dr = 0; dc = 0; break;
-    }
-}
+bool DungeonCrawler::turn() {
+    auto* player = level->getPlayer();
+    if (!player) return false;
 
-void DungeonCrawler::turn(int movingDir) {
-    if (movingDir == 0) return; // end
+    // 1) Eingabe
+    Input in = player->getNextMove();
+    if (in.quit) return false;
 
-    Character* who = level->getPlayer();
-    if (!who || !who->getTile()) {
-        ui->draw(level);
-        return;
+    // 2) Zielkachel berechnen
+    int r = player->getTile()->getRow() + in.dr;
+    int c = player->getTile()->getColumn() + in.dc;
+    auto* dest = level->getTile(r, c);
+
+    // 3) Bewegung ausführen, falls innerhalb des levels
+    if (dest) {
+        player->getTile()->moveTo(dest, player);
     }
 
-    int dr, dc;
-    directionToDelta(movingDir, dr, dc);
-
-    int r = who->getTile()->getRow();
-    int c = who->getTile()->getColumn();
-    int nr = r + dr;
-    int nc = c + dc;
-
-    Tile* current = who->getTile();
-    Tile* destination = level->getTile(nr, nc);
-
-    if (destination) {
-        current->moveTo(destination, who);
-    }
-    // out of bounds -> no movement
-
-    // draw new + next input
+    // 4) Neu zeichnen
     ui->draw(level);
+    return true;
 }
 
 

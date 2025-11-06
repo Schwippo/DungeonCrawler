@@ -2,18 +2,20 @@
 #define ABSTRACTUI_H
 
 class Level;
-class DungeonCrawler;
 
+// Eingabe-Struktur für Bewegung (row, col) und Beenden
+struct Input {
+    int dr{0};
+    int dc{0};
+    bool quit{false};
+};
+
+// Abstraktes UI-Interface
 class AbstractUI {
-protected:
-    DungeonCrawler* controller = nullptr;
-
 public:
     virtual ~AbstractUI() = default;
     virtual void draw(Level* level) = 0;
-
-    // back reference so that UI turn(dir) can call controller
-    void setController(DungeonCrawler* c) { controller = c; }
+    virtual Input move() = 0;
 };
 
 

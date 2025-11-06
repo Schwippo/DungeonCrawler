@@ -2,6 +2,7 @@
 #define CHARACTER_H
 
 #include <string>
+#include "../include/AbstractUI.h"
 
 // forward declaration
 class Tile;
@@ -21,7 +22,7 @@ public:
 
     // set UI für move-Delegation
     void setUI(AbstractUI* u);
-    //inline Input getNextMove();
+    inline Input getNextMove();
 };
 
 

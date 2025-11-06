@@ -9,3 +9,9 @@ Tile* Character::getTile() const { return tile;}
 void Character::setTile(Tile* t) { tile = t; }
 
 void Character::setUI(AbstractUI* u) { ui = u; }
+
+Input Character::getNextMove() {
+    // Delegiert an UI, falls vorhanden, sonst keine Bewegung
+    return ui ? ui->move() : Input{};
+}
+

@@ -1,82 +1,95 @@
 #include "../include/Level.h"
-
+#include "../include/Tile.h"
+#include "../include/Floor.h"
+#include "../include/Wall.h"
+#include "../include/Portal.h"
+#include "../include/Character.h"
 #include <cassert>
 
-Level::Level()
-    : height(5), width(5), grid(height, std::vector<Tile*>(width, nullptr)) {
+Level::Level() {
+    // Beispiel Level
+    const std::vector<std::string> l = {
+        "##########",
+        "#O.......#",
+        "#........#",
+        "#........#",
+        "#........#",
+        "#........#",
+        "##########",
+        "#O.......#",
+        "#........#",
+        "##########"
+    };
+    height = static_cast<int>(l.size());
+    width = static_cast<int>(l.front().size());
+    grid.assign(height, std::vector<Tile*>(width, nullptr));
 
-    // test field: wall and floor
+    // tiles erzeugen
+    std::vector<Portal*> portals;
     for (int r = 0; r < height; ++r) {
+        assert((int)l[r].size() == width);
         for (int c = 0; c < width; ++c) {
-            bool border = (r == 0 || c == 0 || r == height - 1|| c == width - 1);
-            grid[r][c] = border ? static_cast<Tile*>(new Wall(r, c)) : static_cast<Tile*>(new Floor(r, c));
+            char ch = l[r][c];
+            Tile* t = nullptr;
+            switch (ch) {
+                case '#': t = new Wall(r, c); break;
+                case '.': t = new Floor(r, c); break;
+                case 'O': {
+                    auto* p = new Portal(r, c);
+                    portals.push_back(p);
+                    t = p; break;
+                }
+                default:  t = new Floor(r, c); break;
+            }
+            grid[r][c] = t;
         }
     }
 
-    // portal pair
-    auto* p1 = new Portal(1, 1);
-    auto p2 = new Portal(3, 3);
-    grid[1][1] = p1;
-    grid[3][3] = p2;
-    p1->setDestination(p2);
-    p2->setDestination(p1);
+    // portale paaren
+    for (size_t i = 0; i < portals.size(); i+= 2) {
+        portals[i]->setDestination(portals[i+1]);
+        portals[i+1]->setDestination(portals[i]);
+    }
 
-    // place a character in the middle
-    auto* hero = new Character("X");
+    // eine Figur an Startposition setzen
+    Character* hero = new Character("X");
     characters.push_back(hero);
-    placeCharacter(hero, 2, 2);
+    placeCharacter(hero, 2, 2); // Irgendwo bei (2,2)
 }
 
 Level::~Level() {
-    // delete characters
-    for (Character* c : characters) {
-        delete c;
-    }
-    characters.clear();
-
-    // delete Tiles
     for (auto& row : grid) {
-        for (Tile* t : row) {
-            delete t;
-        }
+        for (Tile* t : row) delete t;
     }
-    grid.clear();
-}
-
-Tile* Level::getTile(int row, int col) {
-    if (!inBounds(row, col))
-        return nullptr;
-    return grid[row][col];
-}
-
-const Tile *Level::getTile(int row, int col) const {
-    if (!inBounds(row, col))
-        return nullptr;
-    return grid[row][col];
-}
-
-void Level::placeCharacter(Character* c, int row, int col) {
-    // QUESTION ?!??!?!?!?!??!?!??!
-    assert(c != nullptr);
-    Tile* t = getTile(row, col);
-    if (!t)
-        return; // out of bounds
-
-    // without onEnter
-    if (c->getTile()) {
-        // clear kachel
-        if (c->getTile()->getCharacter() == c) {
-            c->getTile()->setCharacter(nullptr);
-        }
-    }
-    t->setCharacter(c);
-    c->setTile(t);
+    for (Character* c : characters) delete c;
 }
 
 int Level::getHeight() const { return height; }
 int Level::getWidth() const { return width; }
 
-Character *Level::getPlayer() const {
-    return characters.empty() ? nullptr : characters.front();
+Tile* Level::getTile(int r, int c) {
+    if (r < 0 || c < 0 || r >= height || c >= width) return nullptr;
+    return grid[r][c];
 }
+
+const Tile *Level::getTile(int r, int c) const {
+    if (r < 0 || c < 0 || r >= height || c >= width) return nullptr;
+    return grid[r][c];
+}
+
+void Level::placeCharacter(Character* c, int r, int col) {
+    Tile* t = getTile(r, col);
+    if (!t) return;
+
+    // alte kachel räumen
+    if (c->getTile()) c->getTile()->setCharacter(nullptr);
+
+    // neue Kachel setzen
+    t->setCharacter(c);
+    c->setTile(t);
+}
+
+Character* Level::getPlayer() const { return characters.empty() ? nullptr : characters.front(); }
+const std::vector<Character *> &Level::getCharacters() const { return characters; }
+
 

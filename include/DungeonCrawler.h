@@ -8,21 +8,22 @@
 
 #include <cstdlib>
 
-class AbstractUI;
 class Level;
+class AbstractUI;
+class Input;
+class Character;
 
 class DungeonCrawler {
-    AbstractUI* ui;
     Level* level;
-
-    // helping function: calculate row/col out of movingDir
-    static void directionToDelta(int movingDir, int& dr, int& dc);
+    AbstractUI* ui;
 
 public:
     DungeonCrawler();
     ~DungeonCrawler();
 
-    void turn(int movingDir);
+    // genau eine Runde, false bei Spielende
+    bool turn();
+
     Level* getLevel() const;
 };
 
