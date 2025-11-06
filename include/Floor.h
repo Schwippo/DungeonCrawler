@@ -1,13 +1,12 @@
 #ifndef FLOOR_H
 #define FLOOR_H
-#include "Tile.h"
 
+#include "Tile.h"
 
 class Floor : public Tile {
 public:
-    Floor(int row, int column);
-
-    Tile* onEnter(Tile* fromTile, Character* who) override;
+    Floor(int r, int c);
+    std::pair<bool, Tile*> onEnter(Character* who) override;
 };
 
 

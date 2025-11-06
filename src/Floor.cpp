@@ -1,8 +1,9 @@
 #include "../include/Floor.h"
 
-Floor::Floor(int row, int column)
-    : Tile(".", row, column) {}
+Floor::Floor(int r, int c)
+    : Tile(".", r, c) {}
 
-Tile *Floor::onEnter(Tile *fromTile, Character *who) {
-    return this;
+std::pair<bool, Tile*> Floor::onEnter(Character* who) {
+    return {true, nullptr};
 }
+

@@ -1,9 +1,10 @@
 #include "../include/Wall.h"
 
-Wall::Wall(int row, int column)
-    : Tile("#", row, column) {}
+Wall::Wall(int r, int c)
+    : Tile("#", r, c) {}
 
-Tile *Wall::onEnter(Tile *fromTile, Character *who) {
-    return nullptr;
+std::pair<bool, Tile *> Wall::onEnter(Character *who) {
+    return {false, nullptr};
 }
+
 

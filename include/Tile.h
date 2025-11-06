@@ -3,36 +3,43 @@
 #include <string>
 #include "Character.h"
 
-// Forward Declaration WHY???
 class Character;
 
-// abstract class
+// abstract class Tile mit Events
 class Tile {
 protected:
-    std::string texture;
-    Character* character;
+    std::string texture; // Basistextur
+    Character* character; // Figur auf der Kachel / wenn nicht: nullptr
     const int row;
     const int column;
 
+    // Konstruktor protected, damit nur Unterklassen erzeugt werden
+    Tile(std::string tex, int r, int c)
+        : texture(std::move(tex)), character(nullptr), row(r), column(c) {}
+
 public:
-    Tile(std::string texture, int row, int column);
     virtual ~Tile() = default;
 
-    virtual bool moveTo(Tile* destTile, Character* who);
-    virtual Tile* onEnter(Tile* fromTile, Character* who) = 0;
-    virtual Tile* onLeave(Tile* destTile, Character* who);
-
-    // getter methods
-    const std::string& getBaseTexture() const; // base texture
-    virtual std::string getTexture() const; // character texture
+    // Anzeigename: wenn Figur auf Kachel, dann deren Textur, wenn nicht: eigene
+    virtual std::string getTexture() const;
 
     bool hasCharacter() const;
-
     Character* getCharacter() const;
     void setCharacter(Character* c);
 
     int getRow() const;
     int getColumn() const;
+
+    // true, wenn Bewegung erfolgreich (inkl. enter/ leave)
+    bool moveTo(Tile* destTile, Character* who);
+
+    // Event beim Verlassen
+    // In P1 immer true
+    virtual bool onLeave(Tile* destTile, Character* who);
+
+    // Event beim Betreten (erlaubt? -> alternativee Zielkachel)
+    // Portal nutzt alternative Zielkachel, sonst nullptr
+    virtual std::pair<bool, Tile*> onEnter(Character* who) = 0;
 };
 
 

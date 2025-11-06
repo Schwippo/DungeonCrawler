@@ -1,12 +1,14 @@
 #include "../include/Portal.h"
 
-Portal::Portal(int row, int column)
-    : Tile("O", row, column), destination(nullptr) {}
+Portal::Portal(int r, int c)
+    : Tile("O", r, c) {}
 
-void Portal::setDestination(Tile* dest) { destination = dest; }
-
+void Portal::setDestination(Tile* d) { destination = d; }
 Tile* Portal::getDestination() const { return destination; }
 
-Tile* Portal::onEnter(Tile* fromTile, Character* who) { return destination; }
+std::pair<bool, Tile *> Portal::onEnter(Character *who) {
+    return {destination != nullptr, destination};
+}
+
 
 

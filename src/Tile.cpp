@@ -1,9 +1,14 @@
 #include "../include/Tile.h"
 
-Tile::Tile(std::string texture, int row, int column)
-    : texture(std::move(texture)), character(nullptr), row(row), column(column) {}
+std::string Tile::getTexture() const {
+    if (character) {
+        extern const std::string& getCharacterTexture(const Character*);
+        // Für P1 nur Rückgabe der Kachel
+        // Wenn keine Figur: Platzhalter 'X'
+    }
+    return character ? std::string("X") : texture;
+}
 
-const std::string& Tile::getBaseTexture() const { return texture; }
 bool Tile::hasCharacter() const { return character != nullptr; }
 
 Character* Tile::getCharacter() const { return character; }
@@ -12,37 +17,34 @@ void Tile::setCharacter(Character* c) { character = c; }
 int Tile::getRow() const { return row; }
 int Tile::getColumn() const { return column; }
 
-std::string Tile::getTexture() const {
-    if (character)
-        return character->getTexture();
-}
-
 bool Tile::moveTo(Tile *destTile, Character *who) {
     if (!destTile || !who)
         return false;
 
-    // check if kachel can be left
-    Tile* left = onLeave(destTile, who);
-    if (left == nullptr)
+    // 1) Darf aktuelle Kachel verlassen werden?
+    if (!onLeave(destTile, who))
         return false;
 
-    // check which kachel is joined (floor: this, wall: nullptr, portal:: destPortal)
-    Tile* entered = destTile->onEnter(left, who);
-    if (entered == nullptr)
-        return false;
+    // 2) Zielkachel fragen, ob sie betreten werden darf
+    auto[ok, altTile] = destTile->onEnter(who);
+    if (!ok) return false;
 
-    // change character from left to join
-    if (left->getCharacter() == who) {
-        left->setCharacter(nullptr);
+    Tile* entered = altTile ? altTile : destTile;
+
+    // 3) Zustandswechsel: Character von 'this' nach 'entered' bewegen
+    if (this->character == who) {
+        this->character = nullptr;
     }
-    entered->setCharacter(who);
+    entered->character = who;
+
+    // Character muss merken wo er jetzt steht
     who->setTile(entered);
     return true;
 }
 
-Tile *Tile::onLeave(Tile *destTile, Character *who) {
-    // in P1 always allowed
-    return this;
+bool Tile::onLeave(Tile* /*destTile*/, Character* /*who*/) {
+    // in P1 immer true
+    return true;
 }
 
 

@@ -1,21 +1,27 @@
 #ifndef CHARACTER_H
 #define CHARACTER_H
-#include "Tile.h"
+
+#include <string>
 
 // forward declaration
 class Tile;
+class AbstractUI;
 
 class Character {
-    Tile* tile;
     std::string texture;
+    Tile* tile{nullptr};
+    AbstractUI* ui{nullptr};
 
 public:
-    Character(std::string texture);
-
+    explicit Character(std::string texture);
     const std::string& getTexture() const;
 
     Tile* getTile() const;
     void setTile(Tile* t);
+
+    // set UI für move-Delegation
+    void setUI(AbstractUI* u);
+    //inline Input getNextMove();
 };
 
 

@@ -1,12 +1,12 @@
 #ifndef WALL_H
 #define WALL_H
-#include "Tile.h"
 
+#include "Tile.h"
 
 class Wall : public Tile {
 public:
-    Wall(int row, int column);
-    Tile* onEnter(Tile* fromTile, Character* who) override;
+    Wall(int r, int c);
+    std::pair<bool, Tile*> onEnter(Character* who) override;
 };
 
 

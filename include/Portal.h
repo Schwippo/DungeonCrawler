@@ -1,18 +1,18 @@
 #ifndef PORTAL_H
 #define PORTAL_H
+
 #include "Tile.h"
 
-
 class Portal : public Tile {
-    Tile* destination;
+    Tile* destination{nullptr};
 
 public:
-    Portal(int row, int column);
+    Portal(int r, int c);
 
-    void setDestination(Tile* dest);
+    void setDestination(Tile* d);
     Tile* getDestination() const;
 
-    Tile* onEnter(Tile* fromTile, Character* who) override;
+    std::pair<bool, Tile*> onEnter(Character* who) override;
 };
 
 
