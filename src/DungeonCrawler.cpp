@@ -41,11 +41,13 @@ bool DungeonCrawler::turn() {
     // 1) Eingabe
     Input in = player->getNextMove();
     std::cout << "DEBUG: getNextMove() aufgerufen";
+    std::cout.flush();
     if (in.quit) return false;
 
     // 2) Zielkachel berechnen
     int r = player->getTile()->getRow() + in.dr;
     int c = player->getTile()->getColumn() + in.dc;
+    
     auto* dest = level->getTile(r, c);
 
     // 3) Bewegung ausführen, falls innerhalb des levels

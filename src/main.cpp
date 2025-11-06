@@ -3,5 +3,10 @@
 
 int main() {
     DungeonCrawler game;
-    return 0 ;
+    while (true) {
+        if (!game.turn()) break;
+    }
+
+    std::cout << "Spiel beendet\n";
+    return 0;
 }

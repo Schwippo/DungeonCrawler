@@ -17,6 +17,8 @@ void TerminalUI::draw(Level* level) {
 }
 
 Input TerminalUI::move() {
+    std::cout << "DEBUG: move() erreicht\n";
+    std::cout.flush();
     Input in{};
     int v = -1;
 
@@ -31,6 +33,7 @@ Input TerminalUI::move() {
     }
 
     switch (v) {
+        case 0: in.quit = true; break;
         case 1: in.dr = +1; in.dc = -1; break;
         case 2: in.dr = +1; in.dc =  0; break;
         case 3: in.dr = +1; in.dc = +1; break;
