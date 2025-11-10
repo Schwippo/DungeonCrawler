@@ -19,3 +19,8 @@ Each tile reacts differently when entered (onEnter) or left (onLeave).
 - Separation of game logic and user interface
 - Turn-based movement using numeric keypad input (1–9, 5 = stay, 0 = quit)
 - Safe memory management and clear event flow (moveTo, onEnter, onLeave)
+
+### Controls
+- Move with 1–9 (numpad)
+- Stay with 5
+- Quit with 0
