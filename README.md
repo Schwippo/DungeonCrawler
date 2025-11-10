@@ -1,4 +1,4 @@
-# Dungeon Crawler – Practicum Project (C++)
+# Dungeon Crawler
 
 A (for now) text-based dungeon crawler developed for the Programming 2 practicum.
 The goal is to apply object-oriented programming principles such as inheritance, polymorphism, and dynamic memory management.
