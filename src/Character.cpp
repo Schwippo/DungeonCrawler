@@ -12,7 +12,7 @@ void Character::setTile(Tile* t) { tile = t; }
 void Character::setUI(AbstractUI* u) { ui = u; }
 
 Input Character::getNextMove() {
-    std::cout << "DEBUG: getNextMove() erreicht\n";
+    //std::cout << "DEBUG: getNextMove() erreicht\n";
     std::cout.flush();
     // Delegiert an UI, falls vorhanden, sonst keine Bewegung
     return ui ? ui->move() : Input{};
